@@ -1,12 +1,19 @@
-import static org.junit.jupiter.api.Assertions.*;
-/**
-*ClassName:WebScrapingToolTest
-*Package:com.yupi.yuaiagent.tools
-*Description:
-*@Author gaowenhao
-*@Create 2026/7/11 10:06
-*@Version 1.0
-*/
-    class WebScrapingToolTest {
-  
+package com.yupi.yuaiagent.tools;
+
+import com.yupi.yuaiagent.tools.WebScrapingTool;
+import org.junit.jupiter.api.Test;
+import org.springframework.boot.test.context.SpringBootTest;
+
+import static org.junit.jupiter.api.Assertions.assertNotNull;
+
+@SpringBootTest
+public class WebScrapingToolTest {
+
+    @Test
+    public void testScrapeWebPage() {
+        WebScrapingTool tool = new WebScrapingTool();
+        String url = "https://www.codefather.cn";
+        String result = tool.scrapeWebPage(url);
+        assertNotNull(result);
+    }
 }
